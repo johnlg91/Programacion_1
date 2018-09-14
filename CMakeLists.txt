@@ -1,0 +1,15 @@
+cmake_minimum_required(VERSION 3.10)
+project(untitled C)
+
+set(CMAKE_C_STANDARD 11)
+
+add_executable(plus src/intPlusInt.c)
+add_executable(cube src/cubePerimeter.c)
+add_executable(caja src/caja.c)
+add_executable(clase src/clase.c)
+add_executable(sueldo src/sueldo.c)
+add_executable(cualEsMayor src/cualEsMayor2.c)
+add_executable(promedio src/promedio2.c)
+add_executable(loops3 src/loops3.c)
+add_executable(arrays4 src/arrays4.c)
+add_executable(funcion5 src/funcion5.c)
