@@ -1,3 +1,5 @@
+#pragma clang diagnostic push
+#pragma ide diagnostic ignored "cert-msc30-c"
 //
 // Created by Juan Manuel Lopez-Gabeiras on 11/09/2018.
 //
@@ -28,7 +30,7 @@ void ejercicio_7(char c);
 
 //El 8 esta en el 2
 
-int ejercicio_9();
+void ejercicio_9();
 
 void ejercicio_10(int a, int b, int c);
 
@@ -82,6 +84,7 @@ int main(void) {
 void menu() {
     int i;
     float a, b, c;
+    char d;
     while (1) {
         printf("\nIntroduzca el numero de ejercicio a testear (0 para finalizar):\n");
         scanf("%d", &i);
@@ -93,17 +96,15 @@ void menu() {
                 ejercicio_1((int) a, (int) b);
                 break;
             case 2:
-                printf("Introduzca ek kado de un cuadrado\n");
+                printf("Introduzca el kado de un cuadrado\n");
                 scanf("%f", &a);
                 ejercicio_2(a);
                 break;
             case 3:
-                printf("Introduzca el character de su sexo\n");
-                ejercicio_3((char) getchar());
-                break;
             case 4:
                 printf("Introduzca el character de su sexo\n");
-                ejercicio_3((char) getchar());
+                scanf("%s", &d);
+                ejercicio_3(d);
                 break;
             case 5:
                 printf("Introduzca tres numeros\n");
@@ -117,7 +118,8 @@ void menu() {
                 break;
             case 7:
                 printf("Introduzca un caracter\n");
-                ejercicio_7((char) getchar());
+                scanf("%s", &d);
+                ejercicio_7(d);
                 break;
             case 8:
                 printf("Introduzca el lado de un cuadrado\n");
@@ -130,7 +132,7 @@ void menu() {
             case 10:
                 printf("Introduzca tres numeros\n");
                 scanf("%f, %f, %f", &a, &b, &c);
-                ejercicio_10((int)a, (int)b, (int)c);
+                ejercicio_10((int) a, (int) b, (int) c);
                 break;
             case 11:
                 printf("Introduzca el lado de un cuadrado\n");
@@ -250,7 +252,8 @@ void ejercicio_7(char c) {
 }
 
 /* 9. Confeccionar una función que defina dos parámetros enteros y nos retorne el mayor */
-int ejercicio_9() {
+void ejercicio_9() {
+    printf("Esta funcion genera sus numeros random\n");
     srand((unsigned) time(NULL));
     int a = rand(), b = rand();
     ejercicio_1(a, b);
@@ -284,6 +287,7 @@ float superficie_Ej12(int l1, int l2) {// Lo hago retornar float en vez de int p
  * una que permita cargar un vector de 5 elementos enteros y otra que muestre un vector de 5 elementos enteros.
  * En la función main definir una variable de tipo vector y seguidamente llamar a las dos funciones. */
 void ejercicio_13() {
+    printf("Esta funcion genera sus numeros random\n");
     int *vectors;
     vectors = loader_Ej13();
     printer_Ej13(vectors);
@@ -313,6 +317,7 @@ void printer_Ej13(int vectors[]) {
 3-Gasto total de la empresa en sueldos */
 
 void ejercicio_14() {
+    printf("Esta funcion genera sus numeros random\n");
     int *sueldos;
     sueldos = loader_Ej14();
     printer_Ej14(sueldos);
@@ -392,11 +397,12 @@ void printer_Ej15(int vectors[], int arrayN) {
 void ejercicio_16() {
     char chars[50];
     loader_Ej16(chars);
-    printf("La palabra ingresada tiene %d vocales", counter_Ej16(chars));
+    printf("La palabra ingresada tiene %d vocales\n", counter_Ej16(chars));
 }
 
 void loader_Ej16(char chars[]) {
-    gets(chars);
+    printf("Introduzca una palabra y le contare las vocales\n");
+    scanf("%s", chars);
 }
 
 int counter_Ej16(char chars[]) {
@@ -455,4 +461,3 @@ void count_N_print_Ej17(float vec[], float avg) {
     }
     printf("Hay %d personas arriva del promedio y %d abajo del promedio %f\n", above, below, avg);
 }
-
